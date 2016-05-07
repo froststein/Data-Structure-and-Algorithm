@@ -1,8 +1,5 @@
 package question3;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -37,7 +34,7 @@ public class Student {
 		test1=sc.nextInt();
 		test2=sc.nextInt();
 		test3=sc.nextInt();
-
+		sc.close();
 	}
 	public String getAdminNo() {
 		return adminNo;

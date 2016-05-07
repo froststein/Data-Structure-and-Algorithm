@@ -158,6 +158,7 @@ public class StudentUpdater extends JFrame {
 						f1.writeObject(recsReturn);
 					}
 				}
+				JOptionPane.showMessageDialog(null, "Record has been updated");
 			}
 			}
 		});
