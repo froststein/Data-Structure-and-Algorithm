@@ -90,7 +90,7 @@ public class Student implements Comparable<Student>{
   	// Returns information of student object as a string.
    	//----------------------------------------------------------
 	public String toString(){
-		return this.adminNo+" "+this.name+"            "+formatDate(this.birthDate)+"\n";
+		return this.adminNo+" "+this.name+" "+formatDate(this.birthDate)+"\n";
 	}
 	
 	//compare Student object based on admin no
