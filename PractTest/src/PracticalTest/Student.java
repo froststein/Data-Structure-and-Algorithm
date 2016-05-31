@@ -17,6 +17,7 @@ public class Student extends Person{
 		this.fees = fees;
 	}
 	public void view(){
+		System.out.println("Student");
 		super.view();
 		System.out.println("Fees: "+getFees());
 		System.out.println("===================================");

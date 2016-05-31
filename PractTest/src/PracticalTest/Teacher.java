@@ -20,6 +20,7 @@ public class Teacher extends Person{
 		this.salary = salary;
 	}
 	public void view(){
+		System.out.println("Teacher");
 		super.view();
 		System.out.println("Salary: "+getSalary());
 		System.out.println("===================================");
