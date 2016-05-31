@@ -39,7 +39,7 @@ public class Person implements Comparable<Person>{
 	}
 	
 	/* Compare Name by alphabet order
-	public int compareTo(Student s) {
+	public int compareTo(Person ppl) {
 		int result;
 		String tempName = s.getName();
 		result=getName().compareTo(tempName);
@@ -47,7 +47,7 @@ public class Person implements Comparable<Person>{
 	}
 	*/
 	/* Compare age
-	public int compareTo(Student s) {
+	public int compareTo(Person ppl) {
 		int result;
 		int tempage = s.getAge();
 		result=getAge()-tempage;
@@ -56,7 +56,7 @@ public class Person implements Comparable<Person>{
 	*/
 	
 	/* Compare Same Name with age
-	public int compareTo(Student s) {
+	public int compareTo(Person ppl) {
 		int result;
 		if(name.equalsIgnoreCase(s.getName())){
 			result= age-s.getAge();
@@ -67,7 +67,7 @@ public class Person implements Comparable<Person>{
 		return result;
 	}*/
 	/* Compare by length of name
-	public int compareTo(Student s) {
+	public int compareTo(Person ppl) {
 		int result;
 		if(name.length()>s.getName().length()){
 			return 1;
@@ -81,12 +81,20 @@ public class Person implements Comparable<Person>{
 		return result;
 	}
 	*/
-	@Override
+	/* Compare and sort by object type
+	 public int compareTo(Person ppl) {
+		if(ppl instanceof Student){
+			return 1;
+		}else if(ppl instanceof Teacher){
+			return -1;
+			}
+		return 0;
+	}*/
 	public int compareTo(Person ppl) {
 		if(ppl instanceof Student){
 			return getAge()-ppl.getAge();
 		}else if(ppl instanceof Teacher){
-			return -1;
+			return getAge()-ppl.getAge();
 		}
 		return 0;
 	}
