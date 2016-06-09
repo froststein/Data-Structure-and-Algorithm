@@ -7,7 +7,7 @@ package question2;
 // a reference to next node in a singly-linked list
 // An object to be used in the linked list.
 //--------------------------------------------------------
-public class Book {
+public class Book implements Comparable<Book> {
 	private String isbn;
 	private String author;
 
@@ -26,5 +26,9 @@ public class Book {
 	public boolean equals(Object obj) {
 		Book b = (Book) obj;
 		return (this.isbn.equals(b.isbn));
+	}
+
+	public int compareTo(Book tocompare) {	
+		return author.compareTo(tocompare.author);
 	}
 }

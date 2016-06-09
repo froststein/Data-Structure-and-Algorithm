@@ -93,16 +93,14 @@ public class Student implements Comparable<Student>{
 		return this.adminNo+" "+this.name+" "+formatDate(this.birthDate)+"\n";
 	}
 	
-	//compare Student object based on admin no
-	/*public int compareTo(Student s){
-
+	/*
+	public int compareTo(Student s){
 		int result;
 		String tempAdminNo = s.getAdminNo();
-				
 		result = getAdminNo().compareTo(tempAdminNo);
-		
 		return result;	
-	}*/
+	}
+	*/
 	public int compareTo(Student s){
 		return this.getBirthDate().compareTo(s.getBirthDate());
 	}

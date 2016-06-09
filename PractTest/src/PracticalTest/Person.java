@@ -1,5 +1,7 @@
 package PracticalTest;
 
+import java.util.Comparator;
+
 public class Person implements Comparable<Person>{
 	private String name;
 	private String id;
@@ -41,7 +43,7 @@ public class Person implements Comparable<Person>{
 	/* Compare Name by alphabet order
 	public int compareTo(Person ppl) {
 		int result;
-		String tempName = s.getName();
+		String tempName = ppl.getName();
 		result=getName().compareTo(tempName);
 		return result;
 	}
@@ -49,19 +51,19 @@ public class Person implements Comparable<Person>{
 	/* Compare age
 	public int compareTo(Person ppl) {
 		int result;
-		int tempage = s.getAge();
+		int tempage = ppl.getAge();
 		result=getAge()-tempage;
 		return result;
 	}
 	*/
 	
-	/* Compare Same Name with age
+	/* Compare Name and age
 	public int compareTo(Person ppl) {
 		int result;
-		if(name.equalsIgnoreCase(s.getName())){
-			result= age-s.getAge();
+		if(name.equalsIgnoreCase(ppl.getName())){
+			result= age-ppl.getAge();
 		}else{
-			result=getName().compareTo(s.getName());
+			result=getName().compareTo(ppl.getName());
 		}
 		
 		return result;
@@ -69,14 +71,14 @@ public class Person implements Comparable<Person>{
 	/* Compare by length of name
 	public int compareTo(Person ppl) {
 		int result;
-		if(name.length()>s.getName().length()){
+		if(name.length()>ppl.getName().length()){
 			return 1;
 		}
-		else if(name.length()<s.getName().length()){
+		else if(name.length()<ppl.getName().length()){
 			return -1;
 		}
 		else{
-			result=name.compareTo(s.getName());
+			result=name.compareTo(ppl.getName());
 		}
 		return result;
 	}
@@ -90,12 +92,39 @@ public class Person implements Comparable<Person>{
 			}
 		return 0;
 	}*/
+	public static Comparator<Person> COMPARE_BY_AGE = new Comparator<Person>() {
+        public int compare(Person one, Person other) {
+        	if(other instanceof Student){
+            return one.age-other.age;
+        	}
+        	else return 0;
+        }
+    };
+    
 	public int compareTo(Person ppl) {
+		int result=0;
 		if(ppl instanceof Student){
-			return getAge()-ppl.getAge();
+			result=1;
+			if (this instanceof Student)
+				result = this.age - ppl.age;
 		}else if(ppl instanceof Teacher){
-			return getAge()-ppl.getAge();
+			result=-1;
+			if (this instanceof Teacher)
+				result = this.age - ppl.age;
 		}
-		return 0;
+		return result;
 	}
+
+    /*
+	public int compareTo(Person ppl) {
+		int result=0;
+		if(ppl instanceof Student){
+			result= this.age-ppl.getAge();
+		}else 
+			result=this.age-ppl.getAge();
+		
+		return result;
+	}
+	*/
+	
 }
